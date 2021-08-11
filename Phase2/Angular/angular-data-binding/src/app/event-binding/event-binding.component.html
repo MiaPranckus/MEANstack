@@ -1,0 +1,9 @@
+<p>event-binding works!</p>
+<input type="button" value="click here" (click)="fun()"/>
+<br/>
+{{msg}} <!--string interpolation to display message-->
+<br/>
+<span [innerText]="msg"></span> <!--property binding to display value-->
+<br/>
+<input type="button" value="click here" disabled={{f1}}/><br/>
+<input type="button" value="click here" [disabled]="f2"/><br/>

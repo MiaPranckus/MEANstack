@@ -1,0 +1,13 @@
+<div>
+    <h2>Template Driven Form Login Page</h2>
+    <form #loginRef="ngForm" (ngSubmit)="checkUser(loginRef)">
+        <label>Username</label>
+            <input type="text" name="user" ngModel/><br/>
+        <label>Password</label>
+            <input type="password" name="pass" ngModel/><br/>
+        <input type="submit" value="submit"/><br/>
+        <input type="reset" value="reset"/><br/>
+    </form>
+    <br/>
+    {{msg}}
+</div>
