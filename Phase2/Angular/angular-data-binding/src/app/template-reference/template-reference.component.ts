@@ -6,12 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./template-reference.component.css']
 })
 export class TemplateReferenceComponent implements OnInit {
-  fname:any="";
+  fname:string="";
   sum:number = 0;
   constructor() { }
 
   ngOnInit(): void {
   }
+  //passValue(nameRef:HTMLInputElement){
+  //  this.fname = nameRef.value;
+  //}
   passValue(nameRef:any){
     //instance variables
     this.fname= nameRef.value;

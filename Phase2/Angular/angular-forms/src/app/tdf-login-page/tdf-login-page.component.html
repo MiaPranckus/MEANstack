@@ -2,12 +2,18 @@
     <h2>Template Driven Form Login Page</h2>
     <form #loginRef="ngForm" (ngSubmit)="checkUser(loginRef)">
         <label>Username</label>
-            <input type="text" name="user" ngModel/><br/>
+            <input type="text" name="user" ngModel/><br/> <!--putting 'required' field along-->
+            <!--with 'valid'-->
         <label>Password</label>
             <input type="password" name="pass" ngModel/><br/>
-        <input type="submit" value="submit"/><br/>
+            <!--if required field filled, valid is true,if field not filled, valid is false-->
+            <!--if both fields are valid, both need to be filled for valid=true-->
+        <input type="submit" value="submit" disabled="loginRef.invalid"/><br/>
+        <!--if the fields are invalid, then you can't submit-->
+        <!--Reversely you can say [disabled]=!loginRef.valid-->
         <input type="reset" value="reset"/><br/>
     </form>
+    {{loginRef.valid}}
     <br/>
     {{msg}}
 </div>

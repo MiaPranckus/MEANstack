@@ -1,0 +1,42 @@
+<div>
+    <h2>Structure Directive *ngIf and *ngFor</h2>
+    <div *ngIf="false">Welcome to *ngIf - false!</div>
+    <!--This one will not show, because it's false-->
+    <div *ngIf="true">Welcom to *ngIf - true!</div>
+    <div *ngIf="f1">Welcome to *ngIf with variables</div>
+    <div *ngIf="f2">Welcome to *ngIf with variables</div>
+    <!--In TS file, f1 and f2 are true and false respectively-->
+    <input type="button" value="Click Here" (click)="changeValue()"/>
+    <!--changeValue() switches the values of f1 and f2 so different things will appear-->
+    <br/>
+    <input type="button" [value]="b1" (click)="toggle()"/>
+    <br/>
+    <div *ngIf="flag">
+        <h2>Welcome to Angular *ngIf with event</h2>
+    </div>
+    <br/>
+    <hr>
+    <!--Dynamically add names-->
+    Name : <input type="text" #nameRef/>
+    <input type="button" value="Add Names" (click)="addName(nameRef)"/>
+     <!--using reference-->
+    <h2>All students names are</h2>
+    <ul>
+        <li *ngFor="let name of studentNames">{{name}}</li>
+    </ul>
+
+    <hr>
+    <table border = 1>
+        <tr>
+            <td>Id</td>
+            <td>Name</td>
+            <td>Salary</td>
+        </tr>
+        <tr *ngFor="let emp of employees"> 
+            <td>{{emp.id}}</td>
+            <td>{{emp.name}}</td>
+            <td>{{emp.salary}}</td>
+        </tr>
+
+    </table>    
+</div>

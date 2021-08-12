@@ -1,1 +1,14 @@
-<p>mdf-login-page works!</p>
+<div>
+    <h2>Model Driven Form Login Page</h2>
+    <form [formGroup]="loginRef" (ngSubmit)="checkUser()"> <!--no need to pass reference because the reference for user and pass are already stored in the component-->
+        <label>Username</label>
+        <input type="text" formControlName="user"/><br/>
+        <label>Password</label>
+        <input type="password" formControlName="pass"/><br/>
+        <input type="submit" value="submit" [disabled]="!loginRef.valid"/>
+        <!--Unlike in tdf where we have the valid and invalid checks in here-->
+        <!--in mdf, the validation happens in ts file with Validator-->
+        <input type="reset" value="reset"/>
+    </form>
+    {{msg}}
+</div>

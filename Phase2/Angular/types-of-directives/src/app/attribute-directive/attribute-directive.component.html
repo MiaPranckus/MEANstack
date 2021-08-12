@@ -1,0 +1,10 @@
+<div>
+    <h2>Attribute Directive</h2>
+    <p style="color:red">Welcome to Inline CSS style example</p>
+    <p [ngStyle]="{'color':'green'}">Welcome to ngStyle attribute directive</p>
+    <p [ngStyle]=" variableName ">Welcome to ngStyle attribute directive option 2</p>
+    <p class="abc">This is css class selector</p>
+    <p [ngClass]=" 'xyz' ">This is ngClass selector</p>
+    <p [ngClass]="{abc:false, xyz:true}">This is ngClass selector option 2</p>
+    <!--You could also use switch cases for lots of options!-->
+</div>

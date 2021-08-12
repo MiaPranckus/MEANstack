@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class TwoWayBindingComponent implements OnInit {
 
   age:number=22;
+  salary:number = 12000;
   constructor() { }
 
   ngOnInit(): void {
