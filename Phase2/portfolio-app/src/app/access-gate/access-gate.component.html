@@ -1,0 +1,47 @@
+<div id="signUp" *ngIf="signUpShow">
+    <h2>Create account</h2>
+    <form #signUpRef="ngForm" (ngSubmit)="saveUserInfo(signUpRef)">
+        <label>Username</label>
+        <input type="text" name="user" id="user" ngModel required/>
+        <br/>
+        <label>Password</label>
+        <input type="password" #pass1 name="pass" ngModel required/> <br/>
+        <label>Re-enter Password</label>
+        <input type="password" #pass2 required/><br/>
+        <input type="button" value="Verify" (click)="verifyPassword(pass1, pass2)"/><br/>
+        <br/>
+        <!--Submit button-->
+        <input type="Submit" value="Submit" [disabled]="!verifyPassword(pass1, pass2)"/>
+        <input type="button" name="go_to_next" value="Go to Login" (click)="showHide('signUp')"/>
+    </form>
+    <!--{{signUpRef.valid}}-->
+</div>
+
+<div id="login" *ngIf="loginShow">
+    <h2>Log into Account</h2>
+    <form #loginRef="ngForm" (ngSubmit)="checkUser(loginRef)">
+        <label>Username</label>
+        <input type="text" name="user" ngModel required/><br/>
+        <label>Password</label>
+        <input type="password" name="pass" ngModel required/><br/>
+        <input type="submit" value="Submit" [disabled]="!checkUser(loginRef)" 
+        (click)="showHide('login')"/>
+        {{loginMSG}}
+    </form>
+</div>
+
+<div id="portfolio" *ngIf="portfolioShow">
+    <h2>Welcome to Portfolio Page!</h2>
+    <p>Please fill out this Contact form</p>
+    <form #contactForm="ngForm" (ngSubmit)="displayContacts(contactForm)">
+        <label>First Name</label>
+        <input type="text" name="fname" ngModel/><br/>
+        <label>Last Name</label>
+        <input type="text" name="lname" ngModel/><br/>
+        <label>Phone Number</label>
+        <input type="tel" name="phonenumber" ngModel/><br/>
+        <input type="submit" value="submit" (click)="saveContacts(contactForm)"/>
+        <div id="table"></div>
+    </form>
+    
+</div>

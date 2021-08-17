@@ -1,0 +1,17 @@
+<div>
+    <h2>Login Page</h2>
+    <form #loginRef="ngForm" (ngSubmit)="checkUser(loginRef)">
+        <mat-form-field> <!--using predefined forms-->
+            <mat-label>Username</mat-label>
+            <input matInput name="user"/>
+        </mat-form-field>
+        <br/>
+        <mat-form-field> <!--using predefined forms-->
+            <mat-label>Password</mat-label>
+            <input matInput name="pass"/>
+        </mat-form-field>
+        <br/>
+        <button type="submit" mat-raised-button color="primary">Sign In</button>
+        <button type="reset" mat-raised-button style="background-color: aquamarine;">Reset</button>
+    </form>
+</div>
