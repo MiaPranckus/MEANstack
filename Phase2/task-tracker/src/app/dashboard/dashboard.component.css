@@ -1,0 +1,15 @@
+#forms{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+table{
+    width: 80%;
+}
+
+#forms{
+    float:left;
+}
+#table{
+    clear:both;
+}
