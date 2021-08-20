@@ -1,0 +1,60 @@
+[{
+    "Q": "What is the term for a collection of bees?",
+    "O1": "A cloud", "O2": "A swarm", "O3": "A smoke", "O4": "A bowl",
+    "ans": "A swarm"
+},
+
+{
+    "Q": "What is the term for a collection of jellyfish?",
+    "O1": "A blob", "O2": "A jamble", "O3": "A smack", "O4": "A colony",
+    "ans": "A smack"
+
+},
+
+{
+    "Q": "What is the term for a collection of lions?",
+    "O1": "A pride", "O2": "A herd", "O3": "A gang", "O4": "A bunch",
+    "ans": "A pride"
+},
+
+{
+    "Q": "What is the term for a collection of otters?",
+    "O1": "A business", "O2": "A nest", "O3": "A family", "O4": "A ship",
+    "ans": "A family"
+},
+
+{
+    "Q": "What is the term for a collection of zebras?",
+    "O1": "A zeal", "O2": "A streak", "O3": "A set", "O4": "A stadium",
+    "ans": "A zeal"
+},
+
+{
+    "Q": "What is the term for a collection of skunks?",
+    "O1": "A stench", "O2": "A yuck", "O3": "A nest", "O4": "A nose",
+    "ans": "A stench"
+},
+
+{
+    "Q": "What is the term for a collection of ravens?",
+    "O1": "A flock", "O2": "A mass", "O3": "An unkindness", "O4": "A swarm",
+    "ans": "An unkindness"
+},
+
+{
+    "Q": "What is the term for a collection of wolves?",
+    "O1": "A herd", "O2": "A pack", "O3": "A gang", "O4": "A hunt",
+    "ans": "A pack"
+},
+
+{
+    "Q": "What is the term for a collection of toads?",
+    "O1": "A knot", "O2": "A wart", "O3": "A mess", "O4": "A croak",
+    "ans": "A knot"
+},
+
+{
+    "Q": "What is the term for a collection of porcupines?",
+    "O1": "A poke", "O2": "A point", "O3": "A prickle", "O4": "A yelp",
+    "ans": "A prickle"
+}]
