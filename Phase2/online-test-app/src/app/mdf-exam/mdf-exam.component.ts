@@ -55,23 +55,25 @@ export class MdfExamComponent implements OnInit {
 
   grade(){
     for(var i=0; i<this.myQuestions.length; i++){
-      let highlight = document.getElementById(this.myForm.controls[this.myQuestions[i].Q].value);
+      let highlight = document.getElementById(this.selectedAnswers[i]);
       console.log(highlight); //returns an element
-      if(this.myForm.controls[this.myQuestions[i].Q].value === this.myQuestions[i].ans){
+      if(this.selectedAnswers[i] === this.myQuestions[i].ans){
         this.score++;
         if(this.selectedAnswers === null){
         }else{
-          highlight.setAttribute("style", "background-color:green");
+          highlight.style.backgroundColor = "lightgreen";
         }
       } else {
         if(this.selectedAnswers === null){
         }else{
-          highlight.style.color = "Red";
+          highlight.style.backgroundColor = "#F94F4F";
+          let correct = document.getElementById(this.correctAnswers[i]);
+          correct.style.backgroundColor = "lightgreen";
         }
       }
     }
     console.log(this.score);
-    alert("You knew " +this.score + " out of /10 terms");
+    alert("You knew " +this.score + "/10 terms");
     return this.score;
   }
  

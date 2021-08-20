@@ -3,14 +3,14 @@
         <div *ngFor="let question of myQuestions; let i = index">
             <p>{{i + 1}}. {{question.Q}}</p>
             <div id="options"><!--div class = "options"-->
-                <input type="radio" formControlName={{question.Q}} value={{question.O1}} id={{question.O1}} ngModel required/>
-                {{question.O1}}<br/>
-                <input type="radio" formControlName={{question.Q}} value={{question.O2}} id={{question.O2}} ngModel required/>
-                {{question.O2}}<br/>
-                <input type="radio" formControlName={{question.Q}} value={{question.O3}} id={{question.O3}} ngModel required/>
-                {{question.O3}}<br/>
-                <input type="radio" formControlName={{question.Q}} value={{question.O4}} id={{question.O4}} ngModel required/>
-                {{question.O4}}<br/>
+                <input type="radio" formControlName={{question.Q}} value={{question.O1}} ngModel required/>
+                <span id={{question.O1}}>{{question.O1}}</span><br/>
+                <input type="radio" formControlName={{question.Q}} value={{question.O2}} ngModel required/>
+                <span id={{question.O2}}>{{question.O2}}</span><br/>
+                <input type="radio" formControlName={{question.Q}} value={{question.O3}} ngModel required/>
+                <span id={{question.O3}}>{{question.O3}}</span><br/>
+                <input type="radio" formControlName={{question.Q}} value={{question.O4}} ngModel required/>
+                <span id={{question.O4}}>{{question.O4}}</span><br/>
             </div>
             <hr/>
         </div>
