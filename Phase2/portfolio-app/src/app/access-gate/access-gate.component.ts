@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm, NgModel } from '@angular/forms';
-import { $ } from 'protractor';
 
 @Component({
   selector: 'app-access-gate',
