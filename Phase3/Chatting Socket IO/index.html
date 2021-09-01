@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatting Socket.io</title>
+    <script type="text/JavaScript">
+    let ws = new WebSocket("ws://localhost:9090");
+    let time = Date().toString();
+
+    //open the connecton 
+    ws.onopen= ()=> {
+        // send data from client to web socket server application
+        ws.send("Hello Server, I am Client!");
+        info = ()=> {
+            let msg = document.getElementById("clientData").value;
+            ws.send(msg);
+            document.getElementById("clientData").value="";
+            //display the message from the client
+            document.getElementById("messages").innerHTML += "<h5>" + "Client says: " + msg + "<br/>"+ "(" + time + ")" + "</h5>";
+        }
+        // receive the message from server application 
+        ws.onmessage = (msg)=> {
+            console.log(msg.data);
+            //display the message from the server
+            document.getElementById("messages").innerHTML += "<h5>" + msg.data + "</h5>";
+        }
+    }
+    
+    </script>
+</head>
+<body>
+    <h2>Web Socket Program</h2>
+    <div id = "messages">
+        <!--Server messages display here-->
+    </div>
+    Messages :<input type="text" id="clientData"/><br/>
+    <input type="button" value="Send Data" onclick="info()"/>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!--Mia Pranckus
+9/1/21
+Section End Project: Chat Socket.io-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatting Socket.io</title>
+
+    <!-- connecting library file part of node_module folder -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="text/JavaScript">
+        var socket = io();
+        socket.emit("client_inital","Hello Server I am Web Socket Client"); //send client inital message to the server
+        socket.on("server_inital",(msg)=> {
+            console.log(msg); //log server inital message 
+        })
+
+        var messages = document.getElementById("messages");
+        var form = document.getElementById("form");
+        var input = document.getElementById("input");
+        var timestamp = Date().toString();
+
+        function sendToServer(){
+            let chat = document.getElementById("input").value;
+            var username = document.getElementById("username").value;
+            //console.log(chat);
+            if(chat){
+                socket.emit("client_chat", chat, username); //emit the client chat and username to the server
+            }
+        }
+        socket.on("server_chat",(msg)=>{
+            document.getElementById("messages").innerHTML += "<h4>"+ msg +"</h4>" +"<p style='font-size:10px;'>" +timestamp +"</p><hr>"; //display the servers reply
+        })
+    </script>
+</head>
+<body>
+    <h2>Socket.io Chat</h2>
+    <form id = "form">
+        <label>Name</label>
+        <input type="text" name="name" id="username"/><br/>
+        <label>Message</label>
+        <input type="textarea" name="chat" id="input"/><br/>
+        <input type="button" value="Send" onclick="sendToServer()"/>
+        <hr>
+    </form>
+    <div id="messages">
+        <!--Dynamically adds chats-->
+    </div>
+</body>
+</html>
