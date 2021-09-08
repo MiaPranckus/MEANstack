@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatlog</title>
+
+    <!-- connecting library file part of node_module folder -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="text/JavaScript">
+        var socket = io(); //create the socket io reference
+        
+        socket.emit("client_inital","Hello Server I am Web Socket Client"); //send client inital message to the server, this will not be stored
+        socket.on("server_inital",(msg)=> {
+            console.log(msg); //log server inital message
+        })
+
+        var count = 0;
+        function sendToDatabase(){
+            let name = document.getElementById("username").value;
+            let chat = document.getElementById("input").value;
+
+            if(chat){
+                count++;
+                socket.emit("client_chat", name, chat, count); //send the name and chat values to the server
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <h2>Socket.io Chat</h2>
+    <form id = "form">
+        <label>Name</label>
+        <input type="text" name="name" id="username"/><br/>
+        <label>Message</label>
+        <input type="textarea" name="chat" id="input"/><br/>
+        <input type="button" value="Send" onclick="sendToDatabase()"/>
+        <hr>
+    </form>
+</body>
+</html>
